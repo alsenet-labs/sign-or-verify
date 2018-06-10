@@ -1,0 +1,23 @@
+{
+  "name": "signOrVerify",
+  "version": "1.0.0",
+  "description": "Generate or verify signatures in node, browser or command line",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "author": "luc.deschenaux@freesurf.ch",
+  "contributors": [
+    {}
+  ],
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "express": "^4.15.2"
+  },
+  "dependencies": {
+    "commander": "^2.15.1",
+    "jsrsasign": "^8.0.12",
+    "q": "^1.5.1",
+    "request": "^2.86.0"
+  }
+}
