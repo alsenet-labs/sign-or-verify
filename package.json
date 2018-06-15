@@ -1,6 +1,6 @@
 {
   "name": "sign-or-verify",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Generate or verify signatures in node, browser or command line",
   "main": "index.js",
   "scripts": {
