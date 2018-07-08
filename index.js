@@ -31,7 +31,7 @@ if (process && process.title=='node') {
   var fs=require('fs');
 }
 
-if (module && module.parent) {
+if (module && module.exports) {
   // running as module
   module.exports={
     signOrVerify: signOrVerify,
@@ -228,19 +228,20 @@ function signOrVerify(options) {
   var algorithm=options.algorithm;
   var input=options.input;
   var signature=options.signature;
+  var sigString=options.sigString;
 
 
-  assert((pem && pem.length) || (key && key.length),'no key or PEM specified');
+  assert((pem && pem.length) || (key && key.type),'no key or PEM specified');
   assert(input||options.data,'input file not specified');
   assertAlg(algorithm);
 
   if (options.action&&options.action=='VERIFY') {
-    assert(signature,'Signature file not specified');
+    assert(signature||sigString,'Signature file not specified');
   }
 
   var promise=Q.resolve();
 
-  if (key && key.length) {
+  if (key && key.type) {
     delete options.pem;
   
   } else {
