@@ -2,6 +2,9 @@
   "name": "sign-or-verify",
   "version": "1.1.0",
   "description": "Generate or verify signatures in node, browser or command line",
+  "bin": {
+    "sign-or-verify": "index.js"
+  },
   "main": "index.js",
   "scripts": {
     "test": "exit 0"

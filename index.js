@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /*
 * Copyright (c) 2018 ALSENET SA
 *
@@ -31,7 +32,7 @@ if (process && process.title=='node') {
   var fs=require('fs');
 }
 
-if (module && module.exports) {
+if (module && ((runningInNode && module.parent) || (!runningInNode && module.exports))) {
   // running as module
   module.exports={
     signOrVerify: signOrVerify,
